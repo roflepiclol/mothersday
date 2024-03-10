@@ -1,0 +1,33 @@
+%%html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Mother's Day Card</title>
+</head>
+<body>
+    <h1>Happy Mother's Day!</h1>
+    <form onsubmit="checkChildren(event)">
+        <label for="children">Who are the best children?</label>
+        <input type="text" id="children" required>
+        <button type="submit">Show Card</button>
+    </form>
+    <div id="card" style="display: none;">
+        <img src="mothers_day_card.png" alt="Mother's Day Card">
+    </div>
+
+    <script>
+        function checkChildren(event) {
+            event.preventDefault();
+            var children = document.getElementById("children").value.toLowerCase();
+            if (children === "hannah and james") {
+                document.getElementById("card").style.display = "block";
+            } else {
+                alert("Oops! Looks like you haven't mentioned the best children. Try again later!");
+            }
+        }
+    </script>
+</body>
+</html>
